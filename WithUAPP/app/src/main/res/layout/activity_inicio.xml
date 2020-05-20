@@ -7,51 +7,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#38424D"
-    android:backgroundTint="#38424D"
-    tools:context=".MainActivity" >
+    android:background="#6B787F"
+    tools:context=".Inicio">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="¡Bienvenido!"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="262dp"
-        android:layout_height="293dp"
-        android:layout_marginTop="84dp"
+        android:id="@+id/imageView3"
+        android:layout_width="253dp"
+        android:layout_height="283dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/logoblanco" />
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/programarBtn"
         android:layout_width="163dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="124dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/poppins_medium"
-        android:text="Iniciar Sesión"
+        android:text="Programar cita"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/registroBtn"
-        android:layout_width="163dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="120dp"
+        android:id="@+id/citasBtn"
+        android:layout_width="240dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="110dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/poppins_medium"
-        android:text="Registrarse"
+        android:text="Ver citas programadas"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/programarBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

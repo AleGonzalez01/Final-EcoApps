@@ -7,21 +7,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
-    private Button loginBtn;
-    private Button registroBtn;
+public class Registro extends AppCompatActivity {
+    private EditText nombreET;
+    private EditText emailET;
+    private EditText passwordET;
+    private EditText passwordET2;
+    private Button signupBtn;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registro);
 
-        loginBtn=findViewById(R.id.loginBtn);
-        registroBtn=findViewById(R.id.registroBtn);
+        nombreET=findViewById(R.id.nombreET);
+        emailET=findViewById(R.id.emailET);
+        passwordET=findViewById(R.id.passwordET);
+        passwordET2=findViewById(R.id.passwordET2);
+        signupBtn=findViewById(R.id.signupBtn);
 
-        loginBtn.setOnTouchListener(
+        signupBtn.setOnTouchListener(
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
@@ -36,27 +43,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return true;
                 }
-        );
-
-
-
-        registroBtn.setOnTouchListener(
-                (v,event)->{
-                    switch (event.getAction()){
-                        case MotionEvent.ACTION_DOWN:
-                            v.setBackgroundResource(R.drawable.pressed_button);
-                            break;
-
-                        case MotionEvent.ACTION_UP:
-                            v.setBackgroundResource(R.drawable.rounded_button);
-                            Intent in=new Intent(this,Registro.class);
-                            startActivity(in);
-                            break;
-                    }
-                    return true;
-                }
-
-
         );
     }
 }
