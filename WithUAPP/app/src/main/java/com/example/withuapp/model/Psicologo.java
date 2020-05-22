@@ -1,6 +1,8 @@
 package com.example.withuapp.model;
 
-public class Psicologo {
+import java.io.Serializable;
+
+public class Psicologo implements Serializable {
     private String nombre;
     private String apellido;
 
@@ -28,5 +30,10 @@ public class Psicologo {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    @Override
+    public String toString() {
+        return nombre+" "+apellido;
     }
 }

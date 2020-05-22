@@ -9,7 +9,7 @@
         android:id="@+id/nombreRenglon"
         android:layout_width="166dp"
         android:layout_height="28dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/poppins_medium"
         android:text="TextView"
@@ -17,27 +17,24 @@
         app:layout_constraintStart_toEndOf="@+id/perfilImg"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/perfilImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Agenda una cita"
         app:layout_constraintStart_toEndOf="@+id/perfilImg"
         app:layout_constraintTop_toBottomOf="@+id/nombreRenglon" />
+
+    <ImageView
+        android:id="@+id/perfilImg"
+        android:layout_width="101dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="41dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_negro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

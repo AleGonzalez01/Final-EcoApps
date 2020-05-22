@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.withuapp.model.Psicologo;
+import com.example.withuapp.model.Usuario;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +24,7 @@ public class Psicologos extends AppCompatActivity {
     private ListView listaPsicologos;
     private ArrayList <Psicologo> psicologos;
     private CustomAdapter adapter;
+    private Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class Psicologos extends AppCompatActivity {
 
         listaPsicologos=findViewById(R.id.listaPsicologos);
 
+        user=(Usuario) getIntent().getExtras().getSerializable("usuarioActual");
         adapter=new CustomAdapter();
         listaPsicologos.setAdapter(adapter);
 
@@ -39,7 +43,6 @@ public class Psicologos extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Psicologo psicologo=dataSnapshot.getValue(Psicologo.class);
                 adapter.agregarPsicologos(psicologo);
-                Toast.makeText(Psicologos.this, ""+psicologo.getNombre()+" "+psicologo.getApellido(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -63,5 +66,16 @@ public class Psicologos extends AppCompatActivity {
 
             }
         });
+
+        listaPsicologos.setOnItemClickListener(
+                (view, renglon, pos, id)->{
+                    Psicologo psi=adapter.getPsico().get(pos);
+
+                    Intent i=new Intent(this,Agendar.class);
+                    i.putExtra("usuarioActual",user);
+                    i.putExtra("psicologoNombre", psi);
+                    startActivity(i);
+                }
+        );
     }
 }

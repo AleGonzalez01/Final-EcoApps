@@ -38,12 +38,20 @@ public class CustomAdapter extends BaseAdapter {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View row=inflater.inflate(R.layout.renglonpsicologos,null);
         TextView nombreRenglon=row.findViewById(R.id.nombreRenglon);
-        //nombreRenglon.setText(psico.get(position).getNombre()+" "+psico.get(position).getApellido());
+        nombreRenglon.setText(psico.get(position).getNombre()+" "+psico.get(position).getApellido());
         return row;
     }
 
     public void agregarPsicologos(Psicologo doctor){
         psico.add(doctor);
         this.notifyDataSetChanged();
+    }
+
+    public ArrayList<Psicologo> getPsico() {
+        return psico;
+    }
+
+    public void setPsico(ArrayList<Psicologo> psico) {
+        this.psico = psico;
     }
 }

@@ -53,11 +53,13 @@ public class InicioSesion extends AppCompatActivity {
                                         Usuario usuarioEncontrado=coincidencia.getValue(Usuario.class);
                                         if(usuarioEncontrado.getContrasena().equals(contraET.getText().toString())){
                                             Intent in=new Intent(InicioSesion.this,Inicio.class);
+                                            in.putExtra("usuarioActual", usuarioEncontrado);
                                             startActivity(in);
                                         }else{
                                             Toast.makeText(InicioSesion.this,"La contraseña está equivocada",
                                                     Toast.LENGTH_SHORT).show();
                                         }
+
                                     }
                                 }
 
