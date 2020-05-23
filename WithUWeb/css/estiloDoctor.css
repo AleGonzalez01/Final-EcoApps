@@ -1,0 +1,199 @@
+body {
+    width: 100%;
+    background: #E3E0D7;
+    font-family: 'Poppins';
+    font-size: 22px;
+}
+
+/* Cabecera */
+
+#logo{
+    position: absolute;
+    width: 47.15px;
+    height: 54.21px;
+    right: 6.88%;
+    top: 4.39%;
+    align-items: center;
+}
+
+/* Contenido */
+
+/* El div que contiene todo */
+.doctores{
+    position: absolute;
+    width: 802px;
+    height: 419px;
+    left: 18.94%;
+    top: 21.88%;
+    background-color: red;
+    align-items: center;
+}
+
+    /* Div del Lado izquierdo - donde está la foto*/
+
+    #vaLaFoto{
+        position: absolute;
+        width: 401px;
+        height: 419px;
+        background-color:#FCF9F9;
+        align-items: center;
+    }
+
+        #foto{
+            position: absolute;
+            width: 284px;
+            height: 284px;
+            top: 15%;
+            left: 15%;
+            /*background-image: ;*/
+            align-items: center;
+            border-radius: 180px;
+        }
+
+    /* Información para Agendar Cita */
+
+    #contenido{
+        position: absolute;
+        width: 401px;
+        height: 419px;
+        left: 50%;
+        background-color:#FFFCFC;
+        align-items: center;
+    }
+
+        /* Parte de arriba - Nombre y la puntuación */
+
+        #nombreDoct{
+            position: absolute;
+            font-family: Poppins;
+            font-style: Bold;
+            font-weight: 900;
+            font-size: 30px;
+            width: 270px;
+            height: 303px;
+            left: 18%;
+            top: 8.88%;
+            color: #767575;
+            align-items: center;
+        }
+
+        #estrella{
+            position: absolute;
+            width: 90px;
+            height: 13.02px;
+            left: 35.94%;
+            top: 25.88%;
+            align-items: center;
+        }
+
+        /* Div que contiene el tiempo y día de la cita */
+
+        #hora{
+            position: absolute;
+            width: 401px;
+            height: 88px;
+            top: 40%;
+            background-color:#F4F3ED;
+            align-items: center;
+        }
+            #t{
+                position: absolute;
+                font-family: Poppins;
+                font-style: regular;
+                font-weight: 700;
+                font-size: 15px;
+                left: 18.94%;
+                bottom: 20%;
+                color: #767575;
+                align-items: center;
+            }
+
+            #tiempoCita{
+                position: absolute;
+                font-family: Poppins;
+                font-style: regular;
+                font-weight: 10;
+                font-size: 12px;
+                left: 13.94%;
+                top: 28%;
+                color: #767575;
+                align-items: center;
+            }
+
+            #d{
+                position: absolute;
+                font-family: Poppins;
+                font-style: regular;
+                font-weight: 700;
+                font-size: 15px;
+                left: 69%;
+                bottom: 20%;
+                color: #767575;
+                align-items: center;
+            }
+
+            #diaCita{
+                position: absolute;
+                font-family: Poppins;
+                font-style: regular;
+                font-weight: 10;
+                font-size: 12px;
+                left: 63.94%;
+                top: 28%;
+                color: #767575;
+                align-items: center;
+            }
+
+        /* Información acerca del doctor y el lugar de la reunión */
+
+        #acerca{
+            position: absolute;
+            font-family: Poppins;
+            font-style: Bold;
+            font-weight: 900;
+            font-size: 15px;
+            left: 41.18%;
+            top: 60.18%;
+            color: #767575;
+            align-items: center;
+        }
+
+        #info{
+            position: absolute;
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            left: 16.18%;
+            top: 73.18%;
+            color: #767575;
+            align-items: center;
+        }
+
+        #lugar{
+            position: absolute;
+            font-family: Poppins;
+            font-style: italic;
+            font-weight: lighter;
+            font-size: 12px;
+            left: 36.18%;
+            top: 83.18%;
+            color: #767575;
+            align-items: center;
+        }
+
+/* Boton para programar la cita */
+#programarCitaBtn{
+    position: absolute;
+    width: 185px;
+    height: 33px;
+    font-family: Poppins;
+    font-style: Medium;
+    font-size: 12px;
+    top: 90%;
+    left: 41.75%;
+    color: #FFFFFF;
+    background-color: #FF9E99;
+    border-radius: 80px;
+    align-items: center;
+}

@@ -1,0 +1,55 @@
+/* Pagina inicial para seleccionar si registrar o iniciar sesión */
+
+body {
+    width: 100%;
+
+    background: rgb(56, 66,77);
+    font-family: 'Poppins';
+    font-size: 22px;
+    
+}
+
+#logo{
+    position: absolute;
+    width: 275px;
+    height: 230.9px;
+    left: 41%;
+    top: 25%;
+    align-items: center;
+}
+
+#iniciarBtn{
+    position: absolute;
+    font-family: Poppins;
+    font-style: Medium;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: 155px;
+    height: 30px;
+    left: 30%;
+    right: 30%;
+    top: 79.39%;
+    bottom: 15.43%;
+    background-color: #FF9E99;
+    border-radius: 80px;
+    align-items: center;
+    transition: font-size 0.5s ease-in-out;
+
+}
+
+#registrarseBtn{
+    position: absolute;
+    font-family: Poppins;
+    font-style: Medium;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: 155px;
+    height: 30px;
+    left: 60%;
+    right: 50%;
+    top: 79.39%;
+    bottom: 15.43%;
+    background-color: #FF9E99;
+    border-radius: 80px;
+    align-items: center;
+}

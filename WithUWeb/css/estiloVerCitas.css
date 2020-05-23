@@ -1,0 +1,73 @@
+body {
+    width: 100%;
+    background: #F3D5CA;
+    font-family: 'Poppins';
+    font-size: 22px;
+}
+
+#titulo{
+    position: absolute;
+    font-family: Poppins;
+    font-style: Bold;
+    font-size: 14px;
+    right: 47%;
+    top: 5.18%;
+    color: #38424D;
+}
+
+#logo{
+    position: absolute;
+    width: 47.15px;
+    height: 54.21px;
+    right: 6.88%;
+    top: 4.39%;
+    align-items: center;
+}
+
+.doctores{
+    position: absolute;
+    width: 270px;
+    height: 222px;
+    left: 6.94%;
+    top: 36.88%;
+    background-color:#FFFFFF;
+    align-items: center;
+}
+
+
+#doto{
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: 34px;
+    left: 94px;
+    /*background-image: ;*/
+    align-items: center;
+    border-radius: 80px;
+}
+
+#nombreDoct{
+    position: absolute;
+    font-family: Poppins;
+    font-style: Medium;
+    font-size: 18px;
+    width: 270px;
+    height: 303px;
+    left: 25.94%;
+    top: 53.88%;
+    color: #767575;
+    align-items: center;
+}
+
+#Hora{
+    position: absolute;
+    font-family: Poppins;
+    font-style: regular;
+    font-size: 12px;
+    width: 270px;
+    height: 303px;
+    left: 30.94%;
+    top:68.88%;
+    color: #767575;
+    align-items: center;
+}
