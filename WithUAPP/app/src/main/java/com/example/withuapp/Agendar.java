@@ -73,7 +73,6 @@ public class Agendar extends AppCompatActivity {
                             String id=FirebaseDatabase.getInstance().getReference().child("Usuarios").child(user.getId())
                                     .child("Citas").push().getKey();
 
-
                             Cita cita=new Cita(id,"28 de Mayo",tiempoAsignado,p.toString());
 
                             FirebaseDatabase.getInstance().getReference().child("Usuarios").child(user.getId())
