@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.withuapp.model.Psicologo;
@@ -39,6 +40,19 @@ public class CustomAdapter extends BaseAdapter {
         View row=inflater.inflate(R.layout.renglonpsicologos,null);
         TextView nombreRenglon=row.findViewById(R.id.nombreRenglon);
         nombreRenglon.setText(psico.get(position).getNombre()+" "+psico.get(position).getApellido());
+
+        ImageView perfilImg=row.findViewById(R.id.perfilImg);
+
+        //Mostrar imagenes de los psicologos de la lista
+        if(psico.get(position).getNombre().contains("Antonio"))
+            perfilImg.setImageResource(R.drawable.antonio_ruiz);
+        if(psico.get(position).getNombre().contains("Carla"))
+            perfilImg.setImageResource(R.drawable.carla_sandoval);
+        if(psico.get(position).getNombre().contains("Milena"))
+            perfilImg.setImageResource(R.drawable.milena_mesa);
+        if(psico.get(position).getNombre().contains("Jaime"))
+            perfilImg.setImageResource(R.drawable.jaime_ortiz);
+
         return row;
     }
 

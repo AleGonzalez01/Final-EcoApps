@@ -43,7 +43,6 @@ public class Psicologos extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Psicologo psicologo=dataSnapshot.getValue(Psicologo.class);
                 adapter.agregarPsicologos(psicologo);
-
             }
 
             @Override

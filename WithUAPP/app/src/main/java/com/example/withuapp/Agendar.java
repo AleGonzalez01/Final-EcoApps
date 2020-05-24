@@ -28,6 +28,7 @@ public class Agendar extends AppCompatActivity {
     private TextView fecha;
     private Button agendarBtn;
     private ImageView atrasBtn;
+    private ImageView imgPerfil;
     private Psicologo p;
     private int minHora;
     private int maxHora;
@@ -54,6 +55,7 @@ public class Agendar extends AppCompatActivity {
         agendarBtn=findViewById(R.id.agendarBtn);
         fecha=findViewById(R.id.fecha);
         atrasBtn=findViewById(R.id.atrasBtn);
+        imgPerfil=findViewById(R.id.imgPerfil);
 
         p=(Psicologo) getIntent().getExtras().getSerializable("psicologoNombre");
         nombreDoc.setText(p.toString());
@@ -95,9 +97,18 @@ public class Agendar extends AppCompatActivity {
             tiempoAsignado=randomHora+":"+randomMinuto+" P.M";
         }
         hora.setText(tiempoAsignado);
-
-
         String finalTiempoAsignado = tiempoAsignado;
+
+        //Mostrar imagen del psicologo seleccionado
+        if(p.toString().contains("Antonio"))
+            imgPerfil.setImageResource(R.drawable.antonio_ruiz);
+        if(p.toString().contains("Carla"))
+            imgPerfil.setImageResource(R.drawable.carla_sandoval);
+        if(p.toString().contains("Milena"))
+            imgPerfil.setImageResource(R.drawable.milena_mesa);
+        if(p.toString().contains("Jaime"))
+            imgPerfil.setImageResource(R.drawable.jaime_ortiz);
+
         agendarBtn.setOnTouchListener(
                 (v,event)->{
                     switch (event.getAction()){
