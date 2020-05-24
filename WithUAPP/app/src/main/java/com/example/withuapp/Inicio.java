@@ -54,6 +54,7 @@ public class Inicio extends AppCompatActivity {
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
                             Intent in=new Intent(Inicio.this,Citas.class);
+                            in.putExtra("usuarioActual", user);
                             startActivity(in);
                             break;
                     }

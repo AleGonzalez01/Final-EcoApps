@@ -117,6 +117,7 @@ public class Agendar extends AppCompatActivity {
                                     .child("Citas").child(id).setValue(cita);
 
                             Intent in=new Intent(Agendar.this, Citas.class);
+                            in.putExtra("usuarioActual",user);
                             startActivity(in);
                             break;
                     }

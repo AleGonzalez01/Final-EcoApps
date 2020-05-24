@@ -1,6 +1,8 @@
 package com.example.withuapp.model;
 
-public class Cita {
+import java.io.Serializable;
+
+public class Cita implements Serializable {
     private String id;
     private String fecha;
     private String hora;
@@ -46,5 +48,10 @@ public class Cita {
 
     public void setNombrePsico(String nombrePsico) {
         this.nombrePsico = nombrePsico;
+    }
+
+    @Override
+    public String toString() {
+        return "Cita con "+nombrePsico+"\n"+fecha+" - "+hora;
     }
 }
