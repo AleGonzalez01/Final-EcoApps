@@ -39,7 +39,7 @@ body {
         align-items: center;
     }
 
-        #foto{
+        #vaLaFoto img{
             position: absolute;
             width: 284px;
             height: 284px;
@@ -63,7 +63,7 @@ body {
 
         /* Parte de arriba - Nombre y la puntuación */
 
-        #nombreDoct{
+        #contenido h3{
             position: absolute;
             font-family: Poppins;
             font-style: Bold;
@@ -71,8 +71,8 @@ body {
             font-size: 30px;
             width: 270px;
             height: 303px;
-            left: 18%;
-            top: 8.88%;
+            left: 28%;
+            top: 10.88%;
             color: #767575;
             align-items: center;
         }
@@ -108,17 +108,7 @@ body {
                 align-items: center;
             }
 
-            #tiempoCita{
-                position: absolute;
-                font-family: Poppins;
-                font-style: regular;
-                font-weight: 10;
-                font-size: 12px;
-                left: 13.94%;
-                top: 28%;
-                color: #767575;
-                align-items: center;
-            }
+        
 
             #d{
                 position: absolute;
@@ -132,17 +122,31 @@ body {
                 align-items: center;
             }
 
-            #diaCita{
-                position: absolute;
+            #hora p{
+                position: relative;
                 font-family: Poppins;
                 font-style: regular;
                 font-weight: 10;
                 font-size: 12px;
-                left: 63.94%;
-                top: 28%;
+                left: 20.94%;
+                top: 40;
                 color: #767575;
                 align-items: center;
+            
             }
+            #hora h6{
+                position: relative;
+                font-family: Poppins;
+                font-style: regular;
+                font-weight: 10;
+                font-size: 12px;
+                left: 62.94%;
+                top: -5;
+                color: #767575;
+                align-items: center;
+            
+            }
+
 
         /* Información acerca del doctor y el lugar de la reunión */
 
@@ -158,13 +162,13 @@ body {
             align-items: center;
         }
 
-        #info{
+        a{
             position: absolute;
             font-family: Poppins;
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
-            left: 16.18%;
+            left: 25.18%;
             top: 73.18%;
             color: #767575;
             align-items: center;

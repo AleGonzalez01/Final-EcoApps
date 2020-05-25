@@ -26,61 +26,70 @@ body {
     top: 4.39%;
     align-items: center;
 }
+#contenedorBase{
+    display:flex ;
+   margin-top: 9%;
 
-.doctores{
-    position: absolute;
+}
+#contenedorBase div{
+    position: relative;
     width: 270px;
     height: 303px;
-    left: 6.94%;
-    top: 21.88%;
+    left: 2.94%;
+    top: 25.88%;
     background-color:#FFFFFF;
     align-items: center;
+    flex-wrap:wrap;
+    margin: 20px;
 }
 
 
-#doto{
-    position: absolute;
+#contenedorBase img{
+    position: relative;
     width: 84px;
     height: 84px;
     top: 34px;
     left: 94px;
-    /*background-image: ;*/
     align-items: center;
     border-radius: 80px;
 }
 
-#nombreDoct{
-    position: absolute;
+#contenedorBase li{
+    position: relative;
     font-family: Poppins;
     font-style: Medium;
     font-size: 18px;
     width: 270px;
     height: 303px;
-    left: 25.94%;
-    top: 43.88%;
+    left: 26.94%;
+    top: 20%;
     color: #767575;
     align-items: center;
+    list-style:none;
+    display:flex ;
+    flex-wrap:wrap;
+
 }
 
-#AgendarUnaCita{
-    position: absolute;
+#contenedorBase p{
+    position: relative;
     font-family: Poppins;
     font-style: regular;
     font-size: 12px;
     width: 270px;
     height: 303px;
-    left: 30.94%;
-    top:58.88%;
+    left: 2%;
+    top:5%;
     color: #767575;
     align-items: center;
 }
 
-#verMasBtn{
-    position: absolute;
+#contenedorBase button{
+    position: relative;
     font-family: Poppins;
     font-style: Medium;
     font-size: 12px;
-    top: 80%;
+    top: -150;
     left: 38%;
     color: #FFFFFF;
     background-color: #FF9E99;
@@ -88,20 +97,4 @@ body {
     align-items: center;
 }
 
-/*
-@media(max-width: 600px){
-                .recuadroti{
-                    margin-top: 42%;
-                }
-                .calimadas{
-                    margin-left: 115px;
-                    font-size: 300%;
-                }
-                .texto{
-                    margin-top: 45%;
-                    margin-left: 80px;
-                    width: 60%;
-                    font-size: 150%;
-                }
-            }
-*/
+

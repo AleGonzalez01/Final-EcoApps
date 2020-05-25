@@ -1,6 +1,8 @@
+/* Pagina Agendar Cita */
+
 body {
     width: 100%;
-    background: #F3D5CA;
+    background: #E3E0D7;
     font-family: 'Poppins';
     font-size: 22px;
 }
@@ -8,7 +10,8 @@ body {
 #titulo{
     position: absolute;
     font-family: Poppins;
-    font-style: Bold;
+    font-style: normal;
+    font-weight: 10;
     font-size: 14px;
     right: 47%;
     top: 5.18%;
@@ -23,51 +26,74 @@ body {
     top: 4.39%;
     align-items: center;
 }
+#contenedorBase{
+    display:flex ;
+   margin-top: 9%;
 
-.doctores{
-    position: absolute;
+}
+#contenedorBase div{
+    position: relative;
     width: 270px;
-    height: 222px;
-    left: 6.94%;
-    top: 36.88%;
+    height: 303px;
+    left: 2.94%;
+    top: 25.88%;
     background-color:#FFFFFF;
     align-items: center;
+    flex-wrap:wrap;
+    margin: 20px;
 }
 
 
-#doto{
-    position: absolute;
+#contenedorBase img{
+    position: relative;
     width: 84px;
     height: 84px;
     top: 34px;
     left: 94px;
-    /*background-image: ;*/
     align-items: center;
     border-radius: 80px;
 }
 
-#nombreDoct{
-    position: absolute;
+#contenedorBase li{
+    position: relative;
     font-family: Poppins;
     font-style: Medium;
     font-size: 18px;
     width: 270px;
     height: 303px;
-    left: 25.94%;
-    top: 53.88%;
+    left: 30.94%;
+    top: 20%;
     color: #767575;
     align-items: center;
+    list-style:none;
+    display:flex ;
+    flex-wrap:wrap;
+
 }
 
-#Hora{
-    position: absolute;
+#contenedorBase p{
+    position: relative;
     font-family: Poppins;
     font-style: regular;
     font-size: 12px;
     width: 270px;
     height: 303px;
-    left: 30.94%;
-    top:68.88%;
+    left: -10;
+    top:5%;
     color: #767575;
     align-items: center;
 }
+
+#contenedorBase button{
+    position: relative;
+    font-family: Poppins;
+    font-style: Medium;
+    font-size: 12px;
+    top: -150;
+    left: 38%;
+    color: #FFFFFF;
+    background-color: #FF9E99;
+    border-radius: 80px;
+    align-items: center;
+}
+
