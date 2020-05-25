@@ -11,22 +11,28 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+  //variables del html
 const programarBtn = document.getElementById("programarBtn");
 const citasBtn = document.getElementById("citasBtn");
-
+//databse y localStorage
 const database=firebase.database();
 const storage=window.localStorage;
 const usuarioActual=storage.getItem("usuarioActual");
+
+//interacción de cada uno de los botones
 
 programarBtn.addEventListener("click",programar);
 citasBtn.addEventListener("click",citas);
 
 function programar(){
+
+    //pasar el local Storage
     storage.setItem("usuarioActual",usuarioActual);
     console.log(usuarioActual);
     window.location.href="programarCita.html";
 }
 
 function citas(){
+
     window.location.href="verCitas.html";
 }
