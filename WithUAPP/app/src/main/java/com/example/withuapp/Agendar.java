@@ -57,25 +57,26 @@ public class Agendar extends AppCompatActivity {
         atrasBtn=findViewById(R.id.atrasBtn);
         imgPerfil=findViewById(R.id.imgPerfil);
 
+        //Mostrar el nombre del psicologo anteriormente seleccionado
         p=(Psicologo) getIntent().getExtras().getSerializable("psicologoNombre");
         nombreDoc.setText(p.toString());
 
-        //Generar hora random de la cita
+        //Generar hora random de la cita a agendar
         minHora = 7;
         maxHora = 18;
         randomHora = new Random().nextInt((maxHora - minHora) + 1) + minHora;
 
-        //Generar minuto random de la cita
+        //Generar minuto random de la cita a agendar
         minMinuto = 10;
         maxMinuto = 59;
         randomMinuto = new Random().nextInt((maxMinuto - minMinuto) + 1) + minMinuto;
 
-        //Generar dia random de la cita
+        //Generar dia random de la cita a agendar
         minDia = 1;
         maxDia = 30;
         randomDia = new Random().nextInt((maxDia - minDia) + 1) + minDia;
 
-        //Generar mes random de la cita
+        //Generar mes random de la cita a agendar
         minMes = 6;
         maxMes = 9;
         randomMes = new Random().nextInt((maxMes - minMes) + 1) + minMes;
@@ -113,20 +114,23 @@ public class Agendar extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
                             break;
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
 
+                            //Generar id de cada cita
                             String id=FirebaseDatabase.getInstance().getReference().child("Usuarios").child(user.getId())
                                     .child("Citas").push().getKey();
 
+                            //Agregar la cita agendada a la base de datos
                             Cita cita=new Cita(id,fechaAsignada, finalTiempoAsignado,p.toString());
-
                             FirebaseDatabase.getInstance().getReference().child("Usuarios").child(user.getId())
                                     .child("Citas").child(id).setValue(cita);
 
+                            //pasar a la pantalla de las citas agendadas
                             Intent in=new Intent(Agendar.this, Citas.class);
                             in.putExtra("usuarioActual",user);
                             startActivity(in);
@@ -138,6 +142,7 @@ public class Agendar extends AppCompatActivity {
 
         atrasBtn.setOnClickListener(
                 (v)->{
+                    //Devolverse a la pantalla de los psicologos disponibles
                     Intent in=new Intent(Agendar.this, Psicologos.class);
                     startActivity(in);
                 }

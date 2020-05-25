@@ -44,13 +44,16 @@ public class InicioSesion extends AppCompatActivity {
                             break;
 
                         case MotionEvent.ACTION_UP:
+                            //Comprobar si el correo ingresado esta en la base de datos
                             Query busqueda= FirebaseDatabase.getInstance().getReference().child("Usuarios")
                                     .orderByChild("correo").equalTo(correoET.getText().toString());
                             busqueda.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     for(DataSnapshot coincidencia: dataSnapshot.getChildren()){
+                                        //Obtener usuario que coincide con los datos ingresados
                                         Usuario usuarioEncontrado=coincidencia.getValue(Usuario.class);
+                                        //Comprobar que la clave es correcta
                                         if(usuarioEncontrado.getContrasena().equals(contraET.getText().toString())){
                                             Intent in=new Intent(InicioSesion.this,Inicio.class);
                                             in.putExtra("usuarioActual", usuarioEncontrado);

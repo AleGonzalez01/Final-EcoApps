@@ -19,8 +19,7 @@ import java.util.ArrayList;
 
 public class Citas extends AppCompatActivity {
     private ListView listaCitas;
-    private ArrayAdapter<Cita>adapter;
-    private ArrayList<Cita>citas;
+    private CustomAdapter2 adapter2;
     private Usuario user;
 
     @Override
@@ -28,21 +27,20 @@ public class Citas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
 
-        user=(Usuario) getIntent().getExtras().getSerializable("usuarioActual");
-
         listaCitas=findViewById(R.id.listaCitas);
-        citas=new ArrayList<>();
-        adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,citas);
 
-        listaCitas.setAdapter(adapter);
+        user=(Usuario) getIntent().getExtras().getSerializable("usuarioActual");
+        adapter2=new CustomAdapter2();
+        listaCitas.setAdapter(adapter2);
+
 
         FirebaseDatabase.getInstance().getReference().child("Usuarios").child(user.getId()).child("Citas")
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                        //Mostrar las citas que se han agendado anteriormente
                         Cita cita=dataSnapshot.getValue(Cita.class);
-                        citas.add(cita);
-                        adapter.notifyDataSetChanged();
+                        adapter2.agregarPsicologos(cita);
                     }
 
                     @Override

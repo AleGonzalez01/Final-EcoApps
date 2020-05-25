@@ -39,6 +39,7 @@ public class CustomAdapter extends BaseAdapter {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View row=inflater.inflate(R.layout.renglonpsicologos,null);
         TextView nombreRenglon=row.findViewById(R.id.nombreRenglon);
+        //Mostrar el nombre de cada psicologo de la lista
         nombreRenglon.setText(psico.get(position).getNombre()+" "+psico.get(position).getApellido());
 
         ImageView perfilImg=row.findViewById(R.id.perfilImg);

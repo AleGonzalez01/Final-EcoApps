@@ -22,7 +22,6 @@ import java.util.ArrayList;
 public class Psicologos extends AppCompatActivity {
 
     private ListView listaPsicologos;
-    private ArrayList <Psicologo> psicologos;
     private CustomAdapter adapter;
     private Usuario user;
 
@@ -41,6 +40,7 @@ public class Psicologos extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().child("Psicologos").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                //Mostrar lista de psicologos disponibles
                 Psicologo psicologo=dataSnapshot.getValue(Psicologo.class);
                 adapter.agregarPsicologos(psicologo);
             }

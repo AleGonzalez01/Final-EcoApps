@@ -25,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
                             break;
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
+                            //Ir a la pantalla de inicio de sesion
                             Intent in=new Intent(this,InicioSesion.class);
                             startActivity(in);
                             break;
@@ -44,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
                             break;
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
+                            //Ir a la pantalla de registro
                             Intent in=new Intent(this,Registro.class);
                             startActivity(in);
                             break;

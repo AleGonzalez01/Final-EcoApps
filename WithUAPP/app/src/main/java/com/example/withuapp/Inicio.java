@@ -30,11 +30,13 @@ public class Inicio extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
                             break;
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
+                            //Ir a la pantalla de los psicologos disponibles
                             Intent in=new Intent(Inicio.this,Psicologos.class);
                             in.putExtra("usuarioActual", user);
                             startActivity(in);
@@ -48,11 +50,13 @@ public class Inicio extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
                             break;
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
+                            //Ir a la pantalla de citas agendadas anteriormente
                             Intent in=new Intent(Inicio.this,Citas.class);
                             in.putExtra("usuarioActual", user);
                             startActivity(in);

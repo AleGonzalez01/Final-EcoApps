@@ -38,7 +38,9 @@ public class Registro extends AppCompatActivity {
                 (v,event)->{
                     switch (event.getAction()){
                         case MotionEvent.ACTION_DOWN:
+                            //Cambiar el color del boton cuando se da click
                             v.setBackgroundResource(R.drawable.pressed_button);
+                            //Generar id del usuario
                             String id= FirebaseDatabase.getInstance().getReference().child("Usuarios").push().getKey();
                             String nombre=nombreET.getText().toString();
                             String correo=emailET.getText().toString();
@@ -46,7 +48,9 @@ public class Registro extends AppCompatActivity {
                             confirmar=passwordET2.getText().toString();
 
                             Usuario usuario=new Usuario(id,nombre,correo,contra);
+                            //Comprobar que la clave y su confirmacion coinciden
                             if(contra.equals(confirmar)){
+                                //Agregar nuevo usuario
                                 FirebaseDatabase.getInstance().getReference().child("Usuarios").child(id).setValue(usuario);
                             }
 
@@ -54,7 +58,9 @@ public class Registro extends AppCompatActivity {
 
                         case MotionEvent.ACTION_UP:
                             v.setBackgroundResource(R.drawable.rounded_button);
+                            //Comprobar que la clave y su confirmacion coinciden
                             if(contra.equals(confirmar)){
+                                //Ir a la pantalla de iniciar sesion
                                 Intent in=new Intent(this,InicioSesion.class);
                                 startActivity(in);
                             }else{
