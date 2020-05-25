@@ -11,6 +11,7 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+  // variables del html y el local Storage
   const storage=window.localStorage;
   const usuarioActual=storage.getItem("usuarioActual");
   console.log(usuarioActual);
@@ -18,9 +19,12 @@ var firebaseConfig = {
   const contenedorBase =document.getElementById("contenedorBase");
   
  
+  //bajar las citas desde el Firebase
   database.ref().child("Usuarios").child(usuarioActual).child("Citas").on("child_added", function(snapshot){
 
     citas= snapshot.val();
+
+    //crear los elementos del html
 
     let lista= document.createElement("li");
     let imagen = document.createElement("img");
@@ -31,6 +35,7 @@ var firebaseConfig = {
   
 
 
+    //colocar el nombre y la imagen de cada psicologo
     lista.innerHTML = citas.nombrePsico;
     if(citas.nombrePsico.includes("Antonio")){
       imagen.src = "src/antonio_ruiz.png"
@@ -45,7 +50,7 @@ var firebaseConfig = {
       imagen.src = "src/milena_mesa.png"
     }
 
-   
+   //añadir a los elementos del html
     texto.innerText= citas.fecha + " - " + citas.hora;
 
     lista.appendChild(texto);

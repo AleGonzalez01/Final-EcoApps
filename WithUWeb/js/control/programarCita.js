@@ -11,6 +11,7 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+  //variables del local Storage y el html
   const storage=window.localStorage;
   const usuarioActual=storage.getItem("usuarioActual");
   console.log(usuarioActual);
@@ -18,10 +19,12 @@ var firebaseConfig = {
   const contenedorBase =document.getElementById("contenedorBase");
   
  
+  //bajar la lista de psicologos que está en Firebase
   database.ref().child("Psicologos").on("child_added", function(snapshot){
 
     psicologo= snapshot.val();
 
+    //crear elementos del html
     let lista= document.createElement("li");
     let imagen = document.createElement("img");
     let boton = document.createElement("button");
@@ -31,6 +34,7 @@ var firebaseConfig = {
     
   
 
+    //nombre y foto de cada uno de los psicólogos
     lista.innerHTML = psicologo.nombre+ "   "+ psicologo.apellido;
     if(psicologo.nombre.includes("Antonio")){
       imagen.src = "src/antonio_ruiz.png"
@@ -45,10 +49,12 @@ var firebaseConfig = {
       imagen.src = "src/milena_mesa.png"
     }
 
+    //Cada botón envía el nombre de cada psicólogo
     boton.innerHTML = "ver más";
     boton.id = psicologo.nombre + " "+psicologo.apellido;
     boton.addEventListener("click", function(){
 
+      //envío del local Storage
       storage.setItem("psico", boton.id);
       storage.setItem("usuarioActual", usuarioActual );
 
@@ -58,6 +64,7 @@ var firebaseConfig = {
     })
     texto.innerText= "Agenda cita ahora";
 
+    //Añadir elementos al html
     lista.appendChild(texto);
     contenedor.appendChild(imagen);
     contenedor.appendChild(lista);
