@@ -42,7 +42,8 @@ function irAPrincipal(){
           }
           //verificar si la contraseña es correcta
           if(usuarioEncontrado.contrasena==clave){
-            storage.setItem("usuarioActual",usuarioEncontrado);
+            storage.setItem("usuarioActual",usuarioEncontrado.id);
+            console.log(usuarioEncontrado.id);
             window.location.href="principal.html";
           }else{
               alert("La contraseña está equivocada");
